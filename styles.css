@@ -71,3 +71,20 @@
 	margin-bottom: 40px;
 	z-index: 900;
 }
+
+.floating-menu {
+padding: 20px;
+width: 170px;
+margin-left: 50px;
+margin-top: 70px;
+z-index: 100;
+position: fixed;
+}
+
+.floating-menu a, 
+.floating-menu h3 {
+font-size: 0.9em;
+display: block;
+margin: 0 0.5em;
+color: white;
+}

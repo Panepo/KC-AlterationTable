@@ -6,14 +6,25 @@ var ContentOut = React.createClass({
 		var DateTime = new Date();
 		var DateDay = DateTime.getUTCDay();
 		var DateHour = DateTime.getUTCHours();
+				
+		var PanelSun = <a href="#sun-panel" className="mdl-tabs__tab">日 (Sun)</a>;
+		var PanelMon = <a href="#mon-panel" className="mdl-tabs__tab">月 (Mon)</a>;
+		var PanelTue = <a href="#tue-panel" className="mdl-tabs__tab">火 (Tue)</a>;
+		var PanelWed = <a href="#wed-panel" className="mdl-tabs__tab">水 (Wed)</a>;
+		var PanelThu = <a href="#thu-panel" className="mdl-tabs__tab">木 (Thu)</a>;
+		var PanelFri = <a href="#fri-panel" className="mdl-tabs__tab">金 (Fri)</a>;
+		var PanelSat = <a href="#sat-panel" className="mdl-tabs__tab">土 (Sat)</a>;
 		
-		var PanelSun = <a href="#sun-panel" className="mdl-tabs__tab">日(Sun)</a>;
-		var PanelMon = <a href="#mon-panel" className="mdl-tabs__tab">月(Mon)</a>;
-		var PanelTue = <a href="#tue-panel" className="mdl-tabs__tab">火(Tue)</a>;
-		var PanelWed = <a href="#wed-panel" className="mdl-tabs__tab">水(Wed)</a>;
-		var PanelThu = <a href="#thu-panel" className="mdl-tabs__tab">木(Thu)</a>;
-		var PanelFri = <a href="#fri-panel" className="mdl-tabs__tab">金(Fri)</a>;
-		var PanelSat = <a href="#sat-panel" className="mdl-tabs__tab">土(Sat)</a>;
+		var TabClass = "mdl-tabs__panel";
+		var TabClassActive = "mdl-tabs__panel is-active";
+		
+		var TabSun = TabClass;
+		var TabMon = TabClass;
+		var TabTue = TabClass;
+		var TabWed = TabClass;
+		var TabThu = TabClass;
+		var TabFri = TabClass;
+		var TabSat = TabClass;
 		
 		DateHour = DateHour + 9;
 		if ( DateHour >= 24 ){
@@ -25,26 +36,43 @@ var ContentOut = React.createClass({
 		}
 		
 		if (DateDay == 0) {
-			PanelSun = <a href="#sun-panel" className="mdl-tabs__tab is-active">日(Sun)</a>;
+			PanelSun = <a href="#sun-panel" className="mdl-tabs__tab is-active">日 (Sun)</a>;
+			TabSun = TabClassActive;
 		}
 		else if (DateDay == 1) {
-			PanelMon = <a href="#mon-panel" className="mdl-tabs__tab is-active">月(Mon)</a>;
+			PanelMon = <a href="#mon-panel" className="mdl-tabs__tab is-active">月 (Mon)</a>;
+			TabMon = TabClassActive;
 		}
 		else if (DateDay == 2) {
-			PanelTue = <a href="#tue-panel" className="mdl-tabs__tab is-active">火(Tue)</a>;
+			PanelTue = <a href="#tue-panel" className="mdl-tabs__tab is-active">火 (Tue)</a>;
+			TabTue = TabClassActive;
 		}
 		else if (DateDay == 3) {
-			PanelWed = <a href="#wed-panel" className="mdl-tabs__tab is-active">水(Wed)</a>;
+			PanelWed = <a href="#wed-panel" className="mdl-tabs__tab is-active">水 (Wed)</a>;
+			TabWed = TabClassActive;
 		}
 		else if (DateDay == 4) {
-			PanelThu = <a href="#thu-panel" className="mdl-tabs__tab is-active">木(Thu)</a>;
+			PanelThu = <a href="#thu-panel" className="mdl-tabs__tab is-active">木 (Thu)</a>;
+			TabThu = TabClassActive;
 		}
 		else if (DateDay == 5) {
-			PanelFri = <a href="#fri-panel" className="mdl-tabs__tab is-active">金(Fri)</a>;
+			PanelFri = <a href="#fri-panel" className="mdl-tabs__tab is-active">金 (Fri)</a>;
+			TabFri = TabClassActive;
 		}
 		else if (DateDay == 6) {
-			PanelSat = <a href="#sat-panel" className="mdl-tabs__tab is-active">土(Sat)</a>;
+			PanelSat = <a href="#sat-panel" className="mdl-tabs__tab is-active">土 (Sat)</a>;
+			TabSun = TabClassActive;
 		}
+		
+		var TableHead = (
+ 				<thead>
+					<tr className="mdl-data-table__cell--non-numeric">
+					<th>分類</th>
+					<th>装備名</th>
+					<th>二番艦</th>
+					</tr>
+				</thead>
+    );
 		
 		return(
 			<div>
@@ -59,61 +87,71 @@ var ContentOut = React.createClass({
 				    {PanelSat}
 				  </div>
 				
-				  <div className="mdl-tabs__panel is-active" id="sun-panel">
-				    <ul>
-				      <li>Eddard</li>
-				      <li>Catelyn</li>
-				      <li>Robb</li>
-				      <li>Sansa</li>
-				      <li>Brandon</li>
-				      <li>Arya</li>
-				      <li>Rickon</li>
-				    </ul>
+				  <div className={TabSun} id="sun-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
-				  <div className="mdl-tabs__panel" id="mon-panel">
-				    <ul>
-				      <li>Tywin</li>
-				      <li>Cersei</li>
-				      <li>Jamie</li>
-				      <li>Tyrion</li>
-				    </ul>
+				  <div className={TabMon} id="mon-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
-				  <div className="mdl-tabs__panel" id="tue-panel">
-				    <ul>
-				      <li>Viserys</li>
-				      <li>Daenerys</li>
-				    </ul>
+				  <div className={TabTue} id="tue-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
-				  <div className="mdl-tabs__panel" id="wed-panel">
-				    <ul>
-				      <li>Viserys</li>
-				      <li>Daenerys</li>
-				    </ul>
+				  <div className={TabWed} id="wed-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
-				  <div className="mdl-tabs__panel" id="thu-panel">
-				    <ul>
-				      <li>Tywin</li>
-				      <li>Cersei</li>
-				      <li>Jamie</li>
-				      <li>Tyrion</li>
-				    </ul>
+				  <div className={TabThu} id="thu-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
-				  <div className="mdl-tabs__panel" id="fri-panel">
-				    <ul>
-				      <li>Viserys</li>
-				      <li>Daenerys</li>
-				    </ul>
+				  <div className={TabFri} id="fri-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
-				  <div className="mdl-tabs__panel" id="sat-panel">
-				    <ul>
-				      <li>Viserys</li>
-				      <li>Daenerys</li>
-				    </ul>
+				  <div className={TabSat} id="sat-panel">
+				  <p></p>
+				    <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				    	{TableHead}
+				    	<tbody>
+				    	</tbody>
+				    </table>
 				  </div>
 				</div>
 			</div>
 		)
-	}
+	},
+	
+	componentDidUpdate: function() {
+    componentHandler.upgradeDom();
+  }
+	
 });
 
 module.exports = ContentOut;
