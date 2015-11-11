@@ -7,7 +7,7 @@ var Header = React.createClass({
 		<div>
       <header className="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
         <div className="mdl-layout__header-row">
-          <span className="mdl-layout-title">艦これ装備改修表曜日別逆引き</span>
+          <span className="mdl-layout-title">NērēÏdes Garden</span>
           <div className="mdl-layout-spacer"></div>
         </div>
       </header>

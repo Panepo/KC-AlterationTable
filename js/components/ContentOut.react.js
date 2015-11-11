@@ -1,43 +1,49 @@
 var React = require("react");
+var AppStore = require("../stores/AppStore");
 
 var ContentOut = React.createClass({
 	render: function(){
 		var DateTime = new Date();
-		var DateDay = DateTime.getDay();
-		var DateHour = DateTime.getHours();
+		var DateDay = DateTime.getUTCDay();
+		var DateHour = DateTime.getUTCHours();
 		
-		var PanelSun = <a href="#sun-panel" className="mdl-tabs__tab">日</a>;
-		var PanelMon = <a href="#mon-panel" className="mdl-tabs__tab">月</a>;
-		var PanelTue = <a href="#tue-panel" className="mdl-tabs__tab">火</a>;
-		var PanelWed = <a href="#wed-panel" className="mdl-tabs__tab">水</a>;
-		var PanelThu = <a href="#thu-panel" className="mdl-tabs__tab">木</a>;
-		var PanelFri = <a href="#fri-panel" className="mdl-tabs__tab">金</a>;
-		var PanelSat = <a href="#sat-panel" className="mdl-tabs__tab">土</a>;
+		var PanelSun = <a href="#sun-panel" className="mdl-tabs__tab">日(Sun)</a>;
+		var PanelMon = <a href="#mon-panel" className="mdl-tabs__tab">月(Mon)</a>;
+		var PanelTue = <a href="#tue-panel" className="mdl-tabs__tab">火(Tue)</a>;
+		var PanelWed = <a href="#wed-panel" className="mdl-tabs__tab">水(Wed)</a>;
+		var PanelThu = <a href="#thu-panel" className="mdl-tabs__tab">木(Thu)</a>;
+		var PanelFri = <a href="#fri-panel" className="mdl-tabs__tab">金(Fri)</a>;
+		var PanelSat = <a href="#sat-panel" className="mdl-tabs__tab">土(Sat)</a>;
 		
-		if (DateHour == 23){
+		DateHour = DateHour + 9;
+		if ( DateHour >= 24 ){
+			DateHour = DateHour - 24;
 			DateDay = DateDay + 1;
+			if ( DateDay >= 7 ){
+				DateDay = DateDay - 7;
+			}
 		}
 		
 		if (DateDay == 0) {
-			PanelSun = <a href="#sun-panel" className="mdl-tabs__tab is-active">日</a>;
+			PanelSun = <a href="#sun-panel" className="mdl-tabs__tab is-active">日(Sun)</a>;
 		}
 		else if (DateDay == 1) {
-			PanelMon = <a href="#mon-panel" className="mdl-tabs__tab is-active">月</a>;
+			PanelMon = <a href="#mon-panel" className="mdl-tabs__tab is-active">月(Mon)</a>;
 		}
 		else if (DateDay == 2) {
-			PanelTue = <a href="#tue-panel" className="mdl-tabs__tab is-active">火</a>;
+			PanelTue = <a href="#tue-panel" className="mdl-tabs__tab is-active">火(Tue)</a>;
 		}
 		else if (DateDay == 3) {
-			PanelWed = <a href="#wed-panel" className="mdl-tabs__tab is-active">水</a>;
+			PanelWed = <a href="#wed-panel" className="mdl-tabs__tab is-active">水(Wed)</a>;
 		}
 		else if (DateDay == 4) {
-			PanelThu = <a href="#thu-panel" className="mdl-tabs__tab is-active">木</a>;
+			PanelThu = <a href="#thu-panel" className="mdl-tabs__tab is-active">木(Thu)</a>;
 		}
 		else if (DateDay == 5) {
-			PanelFri = <a href="#fri-panel" className="mdl-tabs__tab is-active">金</a>;
+			PanelFri = <a href="#fri-panel" className="mdl-tabs__tab is-active">金(Fri)</a>;
 		}
 		else if (DateDay == 6) {
-			PanelSat = <a href="#sat-panel" className="mdl-tabs__tab is-active">土</a>;
+			PanelSat = <a href="#sat-panel" className="mdl-tabs__tab is-active">土(Sat)</a>;
 		}
 		
 		return(

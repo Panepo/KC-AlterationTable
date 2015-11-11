@@ -1,16 +1,13 @@
 var AppDispatcher = require("../dispatcher/AppDispatcher");
 var AppAction = {
-	increase: function(){
+	CBtoggleC: function(CBtoggle){
 		AppDispatcher.dispatch({
-			actionType: "Increase"
-		});
-	},
-
-	decrease: function(){
-		AppDispatcher.dispatch({
-			actionType: "Decrease"
+			actionType: "CBtoggleC",
+			CBtoggle: CBtoggle
 		});
 	}
+	
+	
 };
 
 module.exports = AppAction;
