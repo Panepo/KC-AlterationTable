@@ -80,4 +80,5 @@ $RECYCLE.BIN/
 *.bat
 test*.html
 test*.js
+test*.json
 bundle.js

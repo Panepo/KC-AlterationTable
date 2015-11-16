@@ -73,12 +73,13 @@
 }
 
 .floating-menu {
-padding: 20px;
-width: 170px;
-margin-left: 50px;
-margin-top: 70px;
-z-index: 100;
-position: fixed;
+	border-radius: 2px;
+	padding: 20px;
+	width: 170px;
+	margin-left: 50px;
+	margin-top: 70px;
+	z-index: 100;
+	position: fixed;
 }
 
 .mdl-data-table {

@@ -8,7 +8,7 @@ var ContentInp = React.createClass({
 		return(
 		<div className="ContentInp">
 			<div className="demo-crumbs mdl-color-text--grey-500">
-      	Panepo.Github.io &gt; NērēÏdes Garden &gt; KanColle alteration
+      	Panepo.Github.io &gt; Yabushirazu &gt; KanColle alteration
       </div>
 			<h4>艦これ装備改修表曜日別逆引き</h4>
 		</div>
