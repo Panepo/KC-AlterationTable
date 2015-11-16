@@ -2,6 +2,8 @@ var React = require("react");
 var AppStore = require("../stores/AppStore");
 
 var ContentOut = React.createClass({
+	displayName: "ContentOut",
+	
 	render: function(){
 		var DateTime = new Date();
 		var DateDay = DateTime.getUTCDay();
@@ -75,7 +77,7 @@ var ContentOut = React.createClass({
     );
 		
 		return(
-			<div>
+			<div className="ContentOut">
 				<div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 				  <div className="mdl-tabs__tab-bar">
 				    {PanelSun}

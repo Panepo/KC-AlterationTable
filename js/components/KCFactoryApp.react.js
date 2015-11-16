@@ -6,6 +6,7 @@ var Footer = require("./Footer.react");
 var AppStore = require("../stores/AppStore");
 
 var KCFactoryApp = React.createClass({
+	displayName: "KCFactoryApp",
 	getInitialState: function(){
 		return{
 			value: AppStore.getValue()
@@ -21,7 +22,7 @@ var KCFactoryApp = React.createClass({
 
 	render: function(){
 		return(
-		<div>
+		<div className="KCFactoryApp">
 			<div className="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
 				<Header value={this.state.value}/>
 				<main className="demo-main mdl-layout__content">

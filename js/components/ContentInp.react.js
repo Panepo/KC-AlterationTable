@@ -1,11 +1,12 @@
 var React = require("react");
 
 var ContentInp = React.createClass({
+	displayName: "ContentInp",
 		
 	render: function(){
 		
 		return(
-		<div>
+		<div className="ContentInp">
 			<div className="demo-crumbs mdl-color-text--grey-500">
       	Panepo.Github.io &gt; NērēÏdes Garden &gt; KanColle alteration
       </div>

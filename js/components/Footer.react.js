@@ -1,10 +1,11 @@
 var React = require("react");
 
 var Footer = React.createClass({
+	displayName: "Footer",
 
 	render: function(){
 		return(
-		<div>
+		<div className="Footer">
       <footer className="demo-footer mdl-mini-footer">
         <div className="mdl-mini-footer--left-section">
           <div><small> 『<a href="http://www.dmm.com/netgame_s/kancolle/">艦これ</a>』(C) DMMゲームズ</small></div>
