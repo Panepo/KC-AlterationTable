@@ -10,33 +10,6 @@ var ContentOut = React.createClass({
 		var DateDay = DateTime.getUTCDay();
 		var DateHour = DateTime.getUTCHours();
 
-		var PanelClass = "mdl-tabs__panel";
-		var PanelClassActive = "mdl-tabs__panel is-active";
-		var TabClass = "mdl-tabs__tab";
-		var TabClassActive = "mdl-tabs__tab is-active";
-		var TableClass = "mdl-data-table mdl-js-data-table mdl-shadow--2dp";
-		
-		var DayList = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-		var DayDisp = ["日 (Sun)", "月 (Mon)", "火 (Tue)", "水 (Wed)", "木 (Thu)", "金 (Fri)", "土 (Sat)"];
-
-		
-		var PanelSun = <a href="#sun-panel" className="mdl-tabs__tab">日 (Sun)</a>;
-		var PanelMon = <a href="#mon-panel" className="mdl-tabs__tab">月 (Mon)</a>;
-		var PanelTue = <a href="#tue-panel" className="mdl-tabs__tab">火 (Tue)</a>;
-		var PanelWed = <a href="#wed-panel" className="mdl-tabs__tab">水 (Wed)</a>;
-		var PanelThu = <a href="#thu-panel" className="mdl-tabs__tab">木 (Thu)</a>;
-		var PanelFri = <a href="#fri-panel" className="mdl-tabs__tab">金 (Fri)</a>;
-		var PanelSat = <a href="#sat-panel" className="mdl-tabs__tab">土 (Sat)</a>;
-		
-		
-		var TabSun = PanelClass;
-		var TabMon = PanelClass;
-		var TabTue = PanelClass;
-		var TabWed = PanelClass;
-		var TabThu = PanelClass;
-		var TabFri = PanelClass;
-		var TabSat = PanelClass;
-		
 		DateHour = DateHour + 9;
 		if ( DateHour >= 24 ){
 			DateHour = DateHour - 24;
@@ -46,35 +19,34 @@ var ContentOut = React.createClass({
 			}
 		}
 		
-		if (DateDay == 0) {
-			PanelSun = <a href="#sun-panel" className="mdl-tabs__tab is-active">日 (Sun)</a>;
-			TabSun = PanelClassActive;
-		}
-		else if (DateDay == 1) {
-			PanelMon = <a href="#mon-panel" className="mdl-tabs__tab is-active">月 (Mon)</a>;
-			TabMon = PanelClassActive;
-		}
-		else if (DateDay == 2) {
-			PanelTue = <a href="#tue-panel" className="mdl-tabs__tab is-active">火 (Tue)</a>;
-			TabTue = PanelClassActive;
-		}
-		else if (DateDay == 3) {
-			PanelWed = <a href="#wed-panel" className="mdl-tabs__tab is-active">水 (Wed)</a>;
-			TabWed = PanelClassActive;
-		}
-		else if (DateDay == 4) {
-			PanelThu = <a href="#thu-panel" className="mdl-tabs__tab is-active">木 (Thu)</a>;
-			TabThu = PanelClassActive;
-		}
-		else if (DateDay == 5) {
-			PanelFri = <a href="#fri-panel" className="mdl-tabs__tab is-active">金 (Fri)</a>;
-			TabFri = PanelClassActive;
-		}
-		else if (DateDay == 6) {
-			PanelSat = <a href="#sat-panel" className="mdl-tabs__tab is-active">土 (Sat)</a>;
-			TabSun = PanelClassActive;
-		}
+		var PanelClass = "mdl-tabs__panel";
+		var PanelClassActive = "mdl-tabs__panel is-active";
+		var TabClass = "mdl-tabs__tab";
+		var TabClassActive = "mdl-tabs__tab is-active";
+		var TableClass = "mdl-data-table mdl-js-data-table mdl-shadow--2dp";
 		
+		var DayList = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+		var DayDisp = ["日 (Sun)", "月 (Mon)", "火 (Tue)", "水 (Wed)", "木 (Thu)", "金 (Fri)", "土 (Sat)"];
+
+		var Tab = new Array();
+		var Panel = new Array();
+		var TabData = new Array();
+		for ( var i = 0; i < DayList.length; i++)
+		{
+			var TabString = "#" + DayList[i] + "-panel";
+			if (DateDay == i)
+			{
+				Panel[i] = PanelClassActive;
+				Tab[i] = <a href={TabString} className={TabClassActive} key={TabString}>{DayDisp[i]}</a>;
+			}
+			else
+			{
+				Panel[i] = PanelClass;
+				Tab[i] = <a href={TabString} className={TabClass} key={TabString}>{DayDisp[i]}</a>;
+			}
+			TabData.push(Tab[i]);
+		}		
+				
 		var TableHead = (
  				<thead>
 					<tr className="mdl-data-table__cell--non-numeric">
@@ -105,82 +77,33 @@ var ContentOut = React.createClass({
 			}
 		}
 		
+		var PanelData = new Array();
+		var PanelCont;
+		
+		for ( var i = 0; i < DayList.length; i++)
+		{
+			var PanelString = DayList[i] + "-panel"
+			PanelCont = (
+				<div className={Panel[i]} id={PanelString} key={PanelString}>
+				  <p></p>
+				    <table className={TableClass}>
+				    	{TableHead}
+				    	<tbody>
+							{TableData[i]}
+				    	</tbody>
+				    </table>
+				</div>
+			);
+			PanelData.push(PanelCont);
+		}
+		
 		return(
 			<div className="ContentOut">
 				<div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 				  <div className="mdl-tabs__tab-bar">
-				    {PanelSun}
-				    {PanelMon}
-				    {PanelTue}
-				    {PanelWed}
-				    {PanelThu}
-				    {PanelFri}
-				    {PanelSat}
+				    {TabData}
 				  </div>
-				
-				  <div className={TabSun} id="sun-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[0]}
-				    	</tbody>
-				    </table>
-				  </div>
-				  <div className={TabMon} id="mon-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[1]}
-				    	</tbody>
-				    </table>
-				  </div>
-				  <div className={TabTue} id="tue-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[2]}
-				    	</tbody>
-				    </table>
-				  </div>
-				  <div className={TabWed} id="wed-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[3]}
-				    	</tbody>
-				    </table>
-				  </div>
-				  <div className={TabThu} id="thu-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[4]}
-				    	</tbody>
-				    </table>
-				  </div>
-				  <div className={TabFri} id="fri-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[5]}
-				    	</tbody>
-				    </table>
-				  </div>
-				  <div className={TabSat} id="sat-panel">
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[6]}
-				    	</tbody>
-				    </table>
-				  </div>
+					{PanelData}
 				</div>
 			</div>
 		)
