@@ -7,7 +7,6 @@
   "license": "MIT",
   "scripts": {
     "start": "browserify -t [ babelify --presets [ react ] ] js/app.js -o bundle.js",
-    "crawler": "node js/crawler.js"
   },
   "dependencies": {
     "flux": "^2.1.1",
