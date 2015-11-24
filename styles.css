@@ -84,15 +84,14 @@
 
 .mdl-data-table {
 	display: flex;
-  align-items: center;
 }
 
 .th1{
-	width: 200px;
+	width: 220px;
 }
 .th2{
 	width: 220px;
 }
 .th3{
-	width: 270px;
+	width: 250px;
 }

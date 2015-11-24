@@ -6,7 +6,7 @@
   "author": "Panepo <panepo@github.io>",
   "license": "MIT",
   "scripts": {
-    "start": "browserify -t [ babelify --presets [ react ] ] js/app.js -o bundle.js",
+    "start": "browserify -t [ babelify --presets [ react ] ] js/app.js -o bundle.js"
   },
   "dependencies": {
     "flux": "^2.1.1",

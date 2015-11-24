@@ -60,15 +60,38 @@ var ContentOut = React.createClass({
 		var Output = this.props.value.Output;
 		var TableData = new Array();
 		var TableCont;
+		var ImgString = new String();
+		var checkboxlist = [
+		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
+		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
+		];
+		var AAlist = [
+		"10cm高角砲＋高射装置", "90mm単装高角砲"
+		];
 		
 		for ( var i = 0; i < Output.length; i++)
 		{
 			TableData[i] = new Array();
 			for ( var j = 0; j < Output[i].length; j++)
 			{
+				for ( var k = 0; k < checkboxlist.length; k++ )
+				{
+					if ( Output[i][j][0] == checkboxlist[k])
+					{
+						ImgString = "./img/sit" + (k+1) +".png";
+					}
+				}
+				for (var k = 0; k < AAlist.length; k++ )
+				{
+					if ( Output[i][j][1] == AAlist[k])
+					{
+						ImgString = "./img/sit0.png";
+					}
+				}
+				
 				TableCont = (
 						<tr className="mdl-data-table__cell--non-numeric" key={i*100+j}>
-						<td>{Output[i][j][0]}</td>
+						<td>{Output[i][j][0]}<img src={ImgString} height="30" width="30" /></td>
 						<td>{Output[i][j][1]}</td>
 						<td>{Output[i][j][2]}</td>
 						</tr>
