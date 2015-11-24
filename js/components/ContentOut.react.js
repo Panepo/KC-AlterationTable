@@ -1,6 +1,4 @@
 var React = require("react");
-var AppStore = require("../stores/AppStore");
-var DataArr = require("../stores/DataArr.js");
 
 var ContentOut = React.createClass({
 	displayName: "ContentOut",
@@ -50,6 +48,7 @@ var ContentOut = React.createClass({
 		var TableHead = (
  				<thead>
 					<tr className="mdl-data-table__cell--non-numeric">
+					<th className="th0"></th>
 					<th className="th1">分類</th>
 					<th className="th2">装備名</th>
 					<th className="th3">二番艦</th>
@@ -78,7 +77,7 @@ var ContentOut = React.createClass({
 				{
 					if ( Output[i][j][0] == checkboxlist[k])
 					{
-						ImgString = "./img/sit" + (k+1) +".png";
+						ImgString = "./img/sit" + (k+1) + ".png";
 					}
 				}
 				for (var k = 0; k < AAlist.length; k++ )
@@ -91,7 +90,8 @@ var ContentOut = React.createClass({
 				
 				TableCont = (
 						<tr className="mdl-data-table__cell--non-numeric" key={i*100+j}>
-						<td>{Output[i][j][0]}<img src={ImgString} height="30" width="30" /></td>
+						<td><img src={ImgString} height="30" width="30"/></td>
+						<td>{Output[i][j][0]}</td>
 						<td>{Output[i][j][1]}</td>
 						<td>{Output[i][j][2]}</td>
 						</tr>

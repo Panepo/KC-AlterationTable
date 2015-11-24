@@ -8,6 +8,7 @@ var ContentInp = React.createClass({
 		return(
 		<div className="ContentInp">
 			<h4>艦これ装備改修表曜日別逆引き</h4>
+			更新: 2015/11/23
 		</div>
 		);
 	}
