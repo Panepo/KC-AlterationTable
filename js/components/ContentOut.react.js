@@ -21,7 +21,7 @@ var ContentOut = React.createClass({
 		var PanelClassActive = "mdl-tabs__panel is-active";
 		var TabClass = "mdl-tabs__tab";
 		var TabClassActive = "mdl-tabs__tab is-active";
-		var TableClass = "mdl-data-table mdl-js-data-table mdl-shadow--2dp";
+		var TableClass = "mdl-data-table mdl-shadow--2dp";
 		
 		var DayList = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 		var DayDisp = ["日 (Sun)", "月 (Mon)", "火 (Tue)", "水 (Wed)", "木 (Thu)", "金 (Fri)", "土 (Sat)"];
@@ -49,9 +49,10 @@ var ContentOut = React.createClass({
  				<thead>
 					<tr className="mdl-data-table__cell--non-numeric">
 					<th className="th0"></th>
-					<th className="th1">分類</th>
-					<th className="th2">装備名</th>
-					<th className="th3">二番艦</th>
+					<th className="th1"></th>
+					<th className="th2">分類</th>
+					<th className="th3">装備名</th>
+					<th className="th4">二番艦</th>
 					</tr>
 				</thead>
     );
@@ -88,8 +89,15 @@ var ContentOut = React.createClass({
 					}
 				}
 				
+				var CheckString = "row" + i.toString() + j.toString();
+				
 				TableCont = (
 						<tr className="mdl-data-table__cell--non-numeric" key={i*100+j}>
+						<td>
+							<label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" htmlFor={CheckString}>
+								<input type="checkbox" id={CheckString} className="mdl-checkbox__input" />
+							</label>
+						</td>
 						<td><img src={ImgString} height="30" width="30"/></td>
 						<td>{Output[i][j][0]}</td>
 						<td>{Output[i][j][1]}</td>
