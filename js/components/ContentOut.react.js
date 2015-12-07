@@ -26,9 +26,9 @@ var ContentOut = React.createClass({
 		var DayList = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 		var DayDisp = ["日 (Sun)", "月 (Mon)", "火 (Tue)", "水 (Wed)", "木 (Thu)", "金 (Fri)", "土 (Sat)"];
 
-		var Tab = new Array();
-		var Panel = new Array();
-		var TabData = new Array();
+		var Tab = [];
+		var Panel = [];
+		var TabData = [];
 		for ( var i = 0; i < DayList.length; i++)
 		{
 			var TabString = "#" + DayList[i] + "-panel";
@@ -47,20 +47,20 @@ var ContentOut = React.createClass({
 				
 		var TableHead = (
  				<thead>
-					<tr className="mdl-data-table__cell--non-numeric">
+					<tr>
 					<th className="th0"></th>
 					<th className="th1"></th>
 					<th className="th2">分類</th>
 					<th className="th3">装備名</th>
-					<th className="th4">二番艦</th>
+					<th className="th4 mdl-data-table__cell--non-numeric">二番艦</th>
 					</tr>
 				</thead>
     );
 		
 		var Output = this.props.value.Output;
-		var TableData = new Array();
+		var TableData = [];
 		var TableCont;
-		var ImgString = new String();
+		var ImgString = "";
 		var checkboxlist = [
 		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
 		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
@@ -92,7 +92,7 @@ var ContentOut = React.createClass({
 				var CheckString = "row" + i.toString() + j.toString();
 				
 				TableCont = (
-						<tr className="mdl-data-table__cell--non-numeric" key={i*100+j}>
+						<tr key={i*100+j}>
 						<td>
 							<label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" htmlFor={CheckString}>
 								<input type="checkbox" id={CheckString} className="mdl-checkbox__input" />
@@ -101,14 +101,14 @@ var ContentOut = React.createClass({
 						<td><img src={ImgString} height="30" width="30"/></td>
 						<td>{Output[i][j][0]}</td>
 						<td>{Output[i][j][1]}</td>
-						<td>{Output[i][j][2]}</td>
+						<td className="mdl-data-table__cell--non-numeric">{Output[i][j][2]}</td>
 						</tr>
 				);
 				TableData[i].push(TableCont);
 			}
 		}
 		
-		var PanelData = new Array();
+		var PanelData = [];
 		var PanelCont;
 		
 		for ( var i = 0; i < DayList.length; i++)

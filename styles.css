@@ -86,17 +86,17 @@
 	display: flex;
 }
 .th0{
-	width: 10%;
+	width: 60px;
 }
 .th1{
-	width: 10%;
+	width: 60px;
 }
 .th2{
-	width: 15%;
+	width: 100px;
 }
 .th3{
-	width: 25%;
+	width: 150px;
 }
 .th4{
-	width: 40%;
+	width: 400px;
 }

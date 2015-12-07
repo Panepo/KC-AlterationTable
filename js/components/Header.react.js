@@ -24,9 +24,10 @@ var Header = React.createClass({
 		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
 		];
 		var checkboxoutput = [];
-		var checkboxtemp, IDstringtemp, cbtoggle;
-		var i;
-		for ( i = 0; i < this.props.value.CBtoggle.length; i++)
+		var checkboxtemp;
+		var IDstringtemp = "";
+		var cbtoggle;
+		for ( var i = 0; i < this.props.value.CBtoggle.length; i++)
 		{
 			IDstringtemp = "checkbox" + i.toString();
 			if ( this.props.value.CBtoggle[i] == 1 ) {
