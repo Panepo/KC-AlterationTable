@@ -71,7 +71,7 @@ var ContentOut = React.createClass({
 		
 		for ( var i = 0; i < Output.length; i++)
 		{
-			TableData[i] = new Array();
+			TableData[i] = [];
 			for ( var j = 0; j < Output[i].length; j++)
 			{
 				for ( var k = 0; k < checkboxlist.length; k++ )
