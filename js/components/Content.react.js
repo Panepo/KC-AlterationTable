@@ -1,7 +1,12 @@
 var React = require("react");
+var ReactPropTypes = React.PropTypes;
 
-var ContentOut = React.createClass({
-	displayName: "ContentOut",
+var Content = React.createClass({
+	displayName: "Content",
+	
+	propTypes: {
+    value: ReactPropTypes.object.isRequired,
+  },
 		
 	render: function(){
 		var DateTime = new Date();
@@ -130,6 +135,8 @@ var ContentOut = React.createClass({
 		
 		return(
 			<div className="ContentOut">
+				<h4>艦これ装備改修表曜日別逆引き</h4>
+				更新: 2015/11/23
 				<div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 				  <div className="mdl-tabs__tab-bar">
 				    {TabData}
@@ -146,4 +153,4 @@ var ContentOut = React.createClass({
 	
 });
 
-module.exports = ContentOut;
+module.exports = Content;

@@ -1,7 +1,6 @@
 var React = require("react");
 var Header = require("./Header.react");
-var ContentInp = require("./ContentInp.react");
-var ContentOut = require("./ContentOut.react");
+var Content = require("./Content.react");
 var Footer = require("./Footer.react");
 var AppStore = require("../stores/AppStore");
 
@@ -29,8 +28,7 @@ var KCFactoryApp = React.createClass({
 					<div className="demo-container mdl-grid">
 						<div className="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
 						<div className="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-						<ContentInp />
-						<ContentOut value={this.state.value}/>
+						<Content value={this.state.value}/>
 						</div>
 					</div>
 				</main>

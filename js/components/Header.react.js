@@ -1,8 +1,13 @@
 var React = require("react");
+var ReactPropTypes = React.PropTypes;
 var AppAction = require("../actions/AppAction");
 
 var Header = React.createClass({
 	displayName: "Header",
+	
+	propTypes: {
+    value: ReactPropTypes.object.isRequired,
+  },
 	
 	handleToggle: function(event){
 		var CBtoggle = this.props.value.CBtoggle;
