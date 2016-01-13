@@ -16,7 +16,7 @@
 
 .demo-ribbon {
   width: 100%;
-  height: 55vh;
+  height: 60vh;
   background-color: #3333cc;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
@@ -24,7 +24,7 @@
 }
 
 .demo-main {
-  margin-top: -50vh;
+  margin-top: -55vh;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;

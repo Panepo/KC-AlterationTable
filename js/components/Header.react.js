@@ -6,11 +6,11 @@ var Header = React.createClass({
 	displayName: "Header",
 	
 	propTypes: {
-    value: ReactPropTypes.object.isRequired,
+    CBtoggle: ReactPropTypes.array.isRequired,
   },
 	
 	handleToggle: function(event){
-		var CBtoggle = this.props.value.CBtoggle;
+		var CBtoggle = this.props.CBtoggle;
 		var CBnumber = parseInt(event.target.id.slice(8));
 		
 		if ( CBtoggle[CBnumber] == 1 ) {
@@ -19,7 +19,7 @@ var Header = React.createClass({
 			CBtoggle[CBnumber] = 1;
 		}
 		
-		this.props.value.CBtoggle = CBtoggle;
+		this.props.CBtoggle = CBtoggle;
 		AppAction.CBtoggleC(CBtoggle);
 	},
 	
@@ -32,10 +32,10 @@ var Header = React.createClass({
 		var checkboxtemp;
 		var IDstringtemp = "";
 		var cbtoggle;
-		for ( var i = 0; i < this.props.value.CBtoggle.length; i++)
+		for ( var i = 0; i < this.props.CBtoggle.length; i++)
 		{
 			IDstringtemp = "checkbox" + i.toString();
-			if ( this.props.value.CBtoggle[i] == 1 ) {
+			if ( this.props.CBtoggle[i] == 1 ) {
 				cbtoggle = <input type="checkbox" id={IDstringtemp} className="mdl-checkbox__input" onClick={this.handleToggle} defaultChecked/>;
 			} else {
 				cbtoggle = <input type="checkbox" id={IDstringtemp} className="mdl-checkbox__input" onClick={this.handleToggle} />;

@@ -5,7 +5,7 @@ var Content = React.createClass({
 	displayName: "Content",
 	
 	propTypes: {
-    value: ReactPropTypes.object.isRequired,
+    Output: ReactPropTypes.array.isRequired,
   },
 		
 	render: function(){
@@ -62,7 +62,7 @@ var Content = React.createClass({
 				</thead>
     );
 		
-		var Output = this.props.value.Output;
+		var Output = this.props.Output;
 		var TableData = [];
 		var TableCont;
 		var ImgString = "";
