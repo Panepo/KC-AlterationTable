@@ -9,6 +9,9 @@ var Content = React.createClass({
   },
 		
 	render: function(){
+		// ===============================================================================
+		// Day calculation
+		// ===============================================================================
 		var DateTime = new Date();
 		var DateDay = DateTime.getUTCDay();
 		var DateHour = DateTime.getUTCHours();
@@ -22,6 +25,9 @@ var Content = React.createClass({
 			}
 		}
 		
+		// ===============================================================================
+		// Generate tab data
+		// ===============================================================================
 		var PanelClass = "mdl-tabs__panel";
 		var PanelClassActive = "mdl-tabs__panel is-active";
 		var TabClass = "mdl-tabs__tab";
@@ -34,22 +40,21 @@ var Content = React.createClass({
 		var Tab = [];
 		var Panel = [];
 		var TabData = [];
-		for ( var i = 0; i < DayList.length; i++)
-		{
+		for ( var i = 0; i < DayList.length; i++) {
 			var TabString = "#" + DayList[i] + "-panel";
-			if (DateDay == i)
-			{
+			if (DateDay == i) {
 				Panel[i] = PanelClassActive;
 				Tab[i] = <a href={TabString} className={TabClassActive} key={TabString}>{DayDisp[i]}</a>;
-			}
-			else
-			{
+			} else {
 				Panel[i] = PanelClass;
 				Tab[i] = <a href={TabString} className={TabClass} key={TabString}>{DayDisp[i]}</a>;
 			}
 			TabData.push(Tab[i]);
 		}		
-				
+
+		// ===============================================================================
+		// Generate table head
+		// ===============================================================================
 		var TableHead = (
  				<thead>
 					<tr>
@@ -62,6 +67,9 @@ var Content = React.createClass({
 				</thead>
     );
 		
+		// ===============================================================================
+		// Generate table content
+		// ===============================================================================
 		var Output = this.props.Output;
 		var TableData = [];
 		var TableCont;
@@ -74,22 +82,17 @@ var Content = React.createClass({
 		"10cm高角砲＋高射装置", "90mm単装高角砲"
 		];
 		
-		for ( var i = 0; i < Output.length; i++)
-		{
+		for ( var i = 0; i < Output.length; i++) {
 			TableData[i] = [];
-			for ( var j = 0; j < Output[i].length; j++)
-			{
-				for ( var k = 0; k < checkboxlist.length; k++ )
-				{
-					if ( Output[i][j][0] == checkboxlist[k])
-					{
+			for ( var j = 0; j < Output[i].length; j++) {
+				for ( var k = 0; k < checkboxlist.length; k++ ) {
+					if ( Output[i][j][0] == checkboxlist[k]) {
 						ImgString = "./img/sit" + (k+1) + ".png";
 					}
 				}
-				for (var k = 0; k < AAlist.length; k++ )
-				{
-					if ( Output[i][j][1] == AAlist[k])
-					{
+				
+				for (var k = 0; k < AAlist.length; k++ ) {
+					if ( Output[i][j][1] == AAlist[k]) {
 						ImgString = "./img/sit0.png";
 					}
 				}
@@ -113,11 +116,13 @@ var Content = React.createClass({
 			}
 		}
 		
+		// ===============================================================================
+		// Generate panel data
+		// ===============================================================================
 		var PanelData = [];
 		var PanelCont;
 		
-		for ( var i = 0; i < DayList.length; i++)
-		{
+		for ( var i = 0; i < DayList.length; i++) {
 			var PanelString = DayList[i] + "-panel"
 			PanelCont = (
 				<div className={Panel[i]} id={PanelString} key={PanelString}>
@@ -133,6 +138,9 @@ var Content = React.createClass({
 			PanelData.push(PanelCont);
 		}
 		
+		// ===============================================================================
+		// return
+		// ===============================================================================
 		return(
 			<div className="ContentOut">
 				<h4>艦これ装備改修表曜日別逆引き</h4>

@@ -19,11 +19,13 @@ var Header = React.createClass({
 			CBtoggle[CBnumber] = 1;
 		}
 		
-		this.props.CBtoggle = CBtoggle;
 		AppAction.CBtoggleC(CBtoggle);
 	},
 	
 	render: function(){
+		// ===============================================================================
+		// Generate checkbox list
+		// ===============================================================================
 		var checkboxlist = [
 		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
 		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
@@ -49,6 +51,9 @@ var Header = React.createClass({
 			checkboxoutput.push(checkboxtemp);
 		}
 		
+		// ===============================================================================
+		// return
+		// ===============================================================================
 		return(
 		<div className="Header">
       <header className="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
