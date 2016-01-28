@@ -92,11 +92,15 @@
 	width: 60px;
 }
 .th2{
-	width: 100px;
+	width: 150px;
 }
 .th3{
-	width: 150px;
+	width: 200px;
 }
 .th4{
 	width: 400px;
+}
+
+.mdl-button {
+	width: 130px;
 }

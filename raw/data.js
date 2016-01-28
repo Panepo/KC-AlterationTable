@@ -101,22 +101,16 @@ var data = [
 ["探照灯",			"96式150cm探照灯",			"霧島",			0,0,1,1,1,1,0],
 ];
 
-var pickup = new String();
-var output = new Array();
+var pickup = "";
+var output = [];
 
-for ( var j = 0; j <= 6; j++)
-{
-	output[j] = new Array();
-	for ( var i = 0; i < data.length; i++)
-	{
-		if( data[i][j+3] )
-		{
-			if ( data[i][1] == pickup )
-			{
+for ( var j = 0; j <= 6; j++){
+	output[j] = [];
+	for ( var i = 0; i < data.length; i++) {
+		if( data[i][j+3] ) {
+			if ( data[i][1] == pickup ) {
 				output[j][output[j].length-1][2] = output[j][output[j].length-1][2].concat(",", data[i][2]);
-			}
-			else
-			{
+			} else {
 				pickup = data[i][1];
 				output[j].push([data[i][0], data[i][1], data[i][2]]);
 			}
@@ -124,4 +118,22 @@ for ( var j = 0; j <= 6; j++)
 	}
 }
 
-fs.writeFileSync("data.json", JSON.stringify(output));
+var checkboxlist = [
+		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
+		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
+		];
+var arrange = [];
+for ( var i = 0; i < checkboxlist.length; i++) {
+	arrange[i] = [];
+	for ( var j = 0; j < output.length; j++ ){
+		arrange[i][j] = [];
+		for ( var k = 0; k < output[j].length; k++ ){
+			if ( output[j][k][0] == checkboxlist[i] ) {
+				arrange[i][j].push([output[j][k][0], output[j][k][1], output[j][k][2]]);
+			}
+		}
+	}
+}
+
+//console.log(arrange[0]);
+fs.writeFileSync("data.json", JSON.stringify(arrange));

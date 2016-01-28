@@ -30,25 +30,30 @@ var Header = React.createClass({
 		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
 		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
 		];
-		var checkboxoutput = [];
-		var checkboxtemp;
-		var IDstringtemp = "";
-		var cbtoggle;
-		for ( var i = 0; i < this.props.CBtoggle.length; i++)
-		{
-			IDstringtemp = "checkbox" + i.toString();
+		var buttonClassActive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary";
+		var buttonClassInactive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent";
+		var idStringTemp = "";
+		var classTemp = "";
+		var checkTemp;
+		var checkOutput = [];
+		
+		for ( var i = 0; i < checkboxlist.length; i++) {
+			idStringTemp = "checkbox" + i.toString();
+			
 			if ( this.props.CBtoggle[i] == 1 ) {
-				cbtoggle = <input type="checkbox" id={IDstringtemp} className="mdl-checkbox__input" onClick={this.handleToggle} defaultChecked/>;
+				classTemp = buttonClassActive;
 			} else {
-				cbtoggle = <input type="checkbox" id={IDstringtemp} className="mdl-checkbox__input" onClick={this.handleToggle} />;
-			}			
-			checkboxtemp = (
-				<label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor={IDstringtemp} key={IDstringtemp}>
-  				{cbtoggle}
-  				<span className="mdl-checkbox__label">{checkboxlist[i]}</span>
-				</label>
+				classTemp = buttonClassInactive;
+			}
+			
+			checkTemp = (
+				<div key={idStringTemp}>
+					<button id={idStringTemp} className={classTemp} onClick={this.handleToggle}>
+						{checkboxlist[i]}
+					</button>
+				</div>
 			);
-			checkboxoutput.push(checkboxtemp);
+			checkOutput.push(checkTemp);
 		}
 		
 		// ===============================================================================
@@ -62,7 +67,7 @@ var Header = React.createClass({
         </div>
       </header>
       <nav className="floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-				{checkboxoutput}
+				{checkOutput}
 			</nav>
       <div className="demo-ribbon"></div>
 		</div>

@@ -1,11 +1,13 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
+var AltList = require("./AltList.react");
+var data = require("../../raw/data.json");
 
 var Content = React.createClass({
 	displayName: "Content",
 	
 	propTypes: {
-    Output: ReactPropTypes.array.isRequired,
+		CBtoggle: ReactPropTypes.array.isRequired,
   },
 		
 	render: function(){
@@ -51,88 +53,43 @@ var Content = React.createClass({
 			}
 			TabData.push(Tab[i]);
 		}		
-
-		// ===============================================================================
-		// Generate table head
-		// ===============================================================================
-		var TableHead = (
- 				<thead>
-					<tr>
-					<th className="th0"></th>
-					<th className="th1"></th>
-					<th className="th2">分類</th>
-					<th className="th3">装備名</th>
-					<th className="th4 mdl-data-table__cell--non-numeric">二番艦</th>
-					</tr>
-				</thead>
-    );
-		
-		// ===============================================================================
-		// Generate table content
-		// ===============================================================================
-		var Output = this.props.Output;
-		var TableData = [];
-		var TableCont;
-		var ImgString = "";
-		var checkboxlist = [
-		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
-		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
-		];
-		var AAlist = [
-		"10cm高角砲＋高射装置", "90mm単装高角砲"
-		];
-		
-		for ( var i = 0; i < Output.length; i++) {
-			TableData[i] = [];
-			for ( var j = 0; j < Output[i].length; j++) {
-				for ( var k = 0; k < checkboxlist.length; k++ ) {
-					if ( Output[i][j][0] == checkboxlist[k]) {
-						ImgString = "./img/sit" + (k+1) + ".png";
-					}
-				}
-				
-				for (var k = 0; k < AAlist.length; k++ ) {
-					if ( Output[i][j][1] == AAlist[k]) {
-						ImgString = "./img/sit0.png";
-					}
-				}
-				
-				var CheckString = "row" + i.toString() + j.toString();
-				
-				TableCont = (
-						<tr key={i*100+j}>
-						<td>
-							<label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" htmlFor={CheckString}>
-								<input type="checkbox" id={CheckString} className="mdl-checkbox__input" />
-							</label>
-						</td>
-						<td><img src={ImgString} height="30" width="30"/></td>
-						<td>{Output[i][j][0]}</td>
-						<td>{Output[i][j][1]}</td>
-						<td className="mdl-data-table__cell--non-numeric">{Output[i][j][2]}</td>
-						</tr>
-				);
-				TableData[i].push(TableCont);
-			}
-		}
-		
 		// ===============================================================================
 		// Generate panel data
 		// ===============================================================================
 		var PanelData = [];
 		var PanelCont;
+		var TableHead = (
+			<thead>
+				<tr>
+				<th className="th0"></th>
+				<th className="th1"></th>
+				<th className="th2">分類</th>
+				<th className="th3">装備名</th>
+				<th className="th4 mdl-data-table__cell--non-numeric">二番艦</th>
+				</tr>
+			</thead>
+    );
 		
 		for ( var i = 0; i < DayList.length; i++) {
 			var PanelString = DayList[i] + "-panel"
 			PanelCont = (
 				<div className={Panel[i]} id={PanelString} key={PanelString}>
-				  <p></p>
-				    <table className={TableClass}>
-				    	{TableHead}
-				    	<tbody>
-							{TableData[i]}
-				    	</tbody>
-				    </table>
+					<p></p>
+					<table className={TableClass}>
+						{TableHead}
+					</table>
+					<AltList day={i} list={data[0]} display={this.props.CBtoggle[0]} tableId={"0"} tableClass={TableClass}/>
+					<AltList day={i} list={data[1]} display={this.props.CBtoggle[1]} tableId={"1"} tableClass={TableClass}/>
+					<AltList day={i} list={data[2]} display={this.props.CBtoggle[2]} tableId={"2"} tableClass={TableClass}/>
+					<AltList day={i} list={data[3]} display={this.props.CBtoggle[3]} tableId={"3"} tableClass={TableClass}/>
+					<AltList day={i} list={data[4]} display={this.props.CBtoggle[4]} tableId={"4"} tableClass={TableClass}/>
+					<AltList day={i} list={data[5]} display={this.props.CBtoggle[5]} tableId={"5"} tableClass={TableClass}/>
+					<AltList day={i} list={data[6]} display={this.props.CBtoggle[6]} tableId={"6"} tableClass={TableClass}/>
+					<AltList day={i} list={data[7]} display={this.props.CBtoggle[7]} tableId={"7"} tableClass={TableClass}/>
+					<AltList day={i} list={data[8]} display={this.props.CBtoggle[8]} tableId={"8"} tableClass={TableClass}/>
+					<AltList day={i} list={data[9]} display={this.props.CBtoggle[9]} tableId={"9"} tableClass={TableClass}/>
+					<AltList day={i} list={data[10]} display={this.props.CBtoggle[10]} tableId={"10"} tableClass={TableClass}/>
+					<AltList day={i} list={data[11]} display={this.props.CBtoggle[11]} tableId={"11"} tableClass={TableClass}/>
 				</div>
 			);
 			PanelData.push(PanelCont);

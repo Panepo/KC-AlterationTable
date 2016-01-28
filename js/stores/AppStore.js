@@ -1,12 +1,10 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require("object-assign");
-var DataArr = require("./DataArr.js");
 
 var CHANGE_EVENT = 'change';
 var _value = {
 	CBtoggle: [1,1,1,1,1,1,1,1,1,1,1,1],
-	Output: DataArr.toggle([1,1,1,1,1,1,1,1,1,1,1,1])
 	};
 	
 // ===============================================================================
@@ -14,8 +12,6 @@ var _value = {
 // ===============================================================================
 function _CBtoggleC(CBtoggle){
 	_value.CBtoggle = CBtoggle;
-	_value.Output = [];
-	_value.Output = DataArr.toggle(CBtoggle);
 }
 
 
