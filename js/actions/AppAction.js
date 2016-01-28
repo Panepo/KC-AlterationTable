@@ -6,8 +6,6 @@ var AppAction = {
 			CBtoggle: CBtoggle
 		});
 	}
-	
-	
 };
 
 module.exports = AppAction;

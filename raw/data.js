@@ -1,4 +1,5 @@
 var fs = require("fs");
+var checkboxlist = require("./checkboxlist");
 
 var data = [
 ["小口径主砲",	"12.7cm連装砲",					"",					1,1,1,1,1,1,1],
@@ -118,10 +119,6 @@ for ( var j = 0; j <= 6; j++){
 	}
 }
 
-var checkboxlist = [
-		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
-		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
-		];
 var arrange = [];
 for ( var i = 0; i < checkboxlist.length; i++) {
 	arrange[i] = [];
@@ -135,5 +132,5 @@ for ( var i = 0; i < checkboxlist.length; i++) {
 	}
 }
 
-//console.log(arrange[0]);
+console.log("data.json arrange complete!");
 fs.writeFileSync("data.json", JSON.stringify(arrange));

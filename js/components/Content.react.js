@@ -42,8 +42,9 @@ var Content = React.createClass({
 		var Tab = [];
 		var Panel = [];
 		var TabData = [];
+		var TabString = "";
 		for ( var i = 0; i < DayList.length; i++) {
-			var TabString = "#" + DayList[i] + "-panel";
+			TabString = "#" + DayList[i] + "-panel";
 			if (DateDay == i) {
 				Panel[i] = PanelClassActive;
 				Tab[i] = <a href={TabString} className={TabClassActive} key={TabString}>{DayDisp[i]}</a>;
@@ -58,6 +59,7 @@ var Content = React.createClass({
 		// ===============================================================================
 		var PanelData = [];
 		var PanelCont;
+		var PanelString = "";
 		var TableHead = (
 			<thead>
 				<tr>
@@ -71,7 +73,7 @@ var Content = React.createClass({
     );
 		
 		for ( var i = 0; i < DayList.length; i++) {
-			var PanelString = DayList[i] + "-panel"
+			PanelString = DayList[i] + "-panel"
 			PanelCont = (
 				<div className={Panel[i]} id={PanelString} key={PanelString}>
 					<p></p>

@@ -1,6 +1,7 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
 var AppAction = require("../actions/AppAction");
+var checkboxlist = require("../../raw/checkboxlist");
 
 var Header = React.createClass({
 	displayName: "Header",
@@ -26,10 +27,6 @@ var Header = React.createClass({
 		// ===============================================================================
 		// Generate checkbox list
 		// ===============================================================================
-		var checkboxlist = [
-		"小口径主砲", "中口径主砲", "大口径主砲", "副砲", "魚雷", "電探",
-		"ソナー", "爆雷", "対艦強化弾", "対空機銃", "高射装置", "探照灯"
-		];
 		var buttonClassActive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary";
 		var buttonClassInactive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent";
 		var idStringTemp = "";
