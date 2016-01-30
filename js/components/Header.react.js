@@ -1,7 +1,7 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
 var AppAction = require("../actions/AppAction");
-var checkboxlist = require("../../raw/checkboxlist");
+var checkboxlist = require("../const/const");
 
 var Header = React.createClass({
 	displayName: "Header",

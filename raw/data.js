@@ -1,5 +1,5 @@
 var fs = require("fs");
-var checkboxlist = require("./checkboxlist");
+var checkboxlist = require("../js/const/const");
 
 var data = [
 ["小口径主砲",	"12.7cm連装砲",					"",					1,1,1,1,1,1,1],

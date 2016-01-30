@@ -1,7 +1,7 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
-var checkboxlist = require("../../raw/checkboxlist");
-var AAlist = require("../../raw/AAlist");
+var checkboxlist = require("../const/const");
+var AAlist = require("../const/const");
 
 var AltList = React.createClass({
 	displayName: "AltList",

@@ -75,7 +75,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # =========================
-# Self define
+*.map
 *.bak
 *.bat
 test*.html
