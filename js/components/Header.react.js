@@ -1,7 +1,7 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
 var AppAction = require("../actions/AppAction");
-var checkboxlist = require("../const/const");
+var Constants = require("../const/const");
 
 var Header = React.createClass({
 	displayName: "Header",
@@ -34,7 +34,7 @@ var Header = React.createClass({
 		var checkTemp;
 		var checkOutput = [];
 		
-		for ( var i = 0; i < checkboxlist.length; i++) {
+		for ( var i = 0; i < Constants.checkboxlist.length; i++) {
 			idStringTemp = "checkbox" + i.toString();
 			
 			if ( this.props.CBtoggle[i] == 1 ) {
@@ -46,7 +46,7 @@ var Header = React.createClass({
 			checkTemp = (
 				<div key={idStringTemp}>
 					<button id={idStringTemp} className={classTemp} onClick={this.handleToggle}>
-						{checkboxlist[i]}
+						{Constants.checkboxlist[i]}
 					</button>
 				</div>
 			);

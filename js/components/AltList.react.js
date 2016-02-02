@@ -1,7 +1,6 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
-var checkboxlist = require("../const/const");
-var AAlist = require("../const/const");
+var Constants = require("../const/const");
 
 var AltList = React.createClass({
 	displayName: "AltList",
@@ -24,14 +23,14 @@ var AltList = React.createClass({
 		for ( var i = 0; i < this.props.list.length; i++) {
 			TableData[i] = [];
 			for ( var j = 0; j < this.props.list[i].length; j++) {
-				for ( var k = 0; k < checkboxlist.length; k++ ) {
-					if ( this.props.list[i][j][0] == checkboxlist[k]) {
+				for ( var k = 0; k < Constants.checkboxlist.length; k++ ) {
+					if ( this.props.list[i][j][0] == Constants.checkboxlist[k]) {
 						ImgString = "./img/sit" + (k+1) + ".png";
 					}
 				}
 				
-				for (var k = 0; k < AAlist.length; k++ ) {
-					if ( this.props.list[i][j][1] == AAlist[k]) {
+				for (var k = 0; k < Constants.AAlist.length; k++ ) {
+					if ( this.props.list[i][j][1] == Constants.AAlist[k]) {
 						ImgString = "./img/sit0.png";
 					}
 				}

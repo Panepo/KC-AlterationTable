@@ -1,5 +1,5 @@
 var fs = require("fs");
-var checkboxlist = require("../js/const/const");
+var Constants = require("../js/const/const");
 
 var data = [
 ["小口径主砲",	"12.7cm連装砲",					"",					1,1,1,1,1,1,1],
@@ -120,12 +120,12 @@ for ( var j = 0; j <= 6; j++){
 }
 
 var arrange = [];
-for ( var i = 0; i < checkboxlist.length; i++) {
+for ( var i = 0; i < Constants.checkboxlist.length; i++) {
 	arrange[i] = [];
 	for ( var j = 0; j < output.length; j++ ){
 		arrange[i][j] = [];
 		for ( var k = 0; k < output[j].length; k++ ){
-			if ( output[j][k][0] == checkboxlist[i] ) {
+			if ( output[j][k][0] == Constants.checkboxlist[i] ) {
 				arrange[i][j].push([output[j][k][0], output[j][k][1], output[j][k][2]]);
 			}
 		}
