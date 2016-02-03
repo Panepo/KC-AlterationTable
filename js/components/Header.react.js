@@ -7,8 +7,14 @@ var Header = React.createClass({
 	displayName: "Header",
 	
 	propTypes: {
-    CBtoggle: ReactPropTypes.array.isRequired,
-  },
+		CBtoggle: ReactPropTypes.array.isRequired,
+	},
+	
+	getInitialState: function(){
+		return{
+			toggleAll: true
+		};
+	},
 	
 	handleToggle: function(event){
 		var CBtoggle = this.props.CBtoggle;
@@ -23,6 +29,27 @@ var Header = React.createClass({
 		AppAction.CBtoggleC(CBtoggle);
 	},
 	
+	handleToggleAll: function(){
+		var CBtoggle = this.props.CBtoggle;
+		
+		if ( this.state.toggleAll == true ) {
+			this.setState({
+				toggleAll: false
+			});
+			for ( var i = 0; i < CBtoggle.length; i++) {
+				CBtoggle[i] = 0;
+			}
+		} else {
+			this.setState({
+				toggleAll: true
+			});
+						for ( var i = 0; i < CBtoggle.length; i++) {
+				CBtoggle[i] = 1;
+			}
+		}
+		AppAction.CBtoggleC(CBtoggle);
+	},
+	
 	render: function(){
 		// ===============================================================================
 		// Generate checkbox list
@@ -33,6 +60,21 @@ var Header = React.createClass({
 		var classTemp = "";
 		var checkTemp;
 		var checkOutput = [];
+		
+		if ( this.state.toggleAll == true ) {
+			classTemp = buttonClassActive;
+		} else {
+			classTemp = buttonClassInactive;
+		}
+		
+		checkTemp = (
+			<div>
+				<button className={classTemp} onClick={this.handleToggleAll}>
+					全選
+				</button>
+			</div>
+		);
+		checkOutput.push(checkTemp);
 		
 		for ( var i = 0; i < Constants.checkboxlist.length; i++) {
 			idStringTemp = "checkbox" + i.toString();

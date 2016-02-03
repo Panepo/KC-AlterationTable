@@ -14,11 +14,11 @@ var AltList = React.createClass({
   },
 	
 	handleChange: function(event) {
-		var trid = this.props.tableId + event.target.id.slice(-2);
+		var trId = this.props.tableId + event.target.id.slice(-2);
 		if ( event.target.checked ) {
-			document.getElementById(trid).style.backgroundColor = "#ccccff";
+			document.getElementById(trId).style.backgroundColor = "#ccccff";
 		} else {
-			document.getElementById(trid).style.backgroundColor = "white";
+			document.getElementById(trId).style.backgroundColor = "white";
 		}
 	},
 
