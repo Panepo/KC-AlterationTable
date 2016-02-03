@@ -68,7 +68,7 @@ var Header = React.createClass({
 		}
 		
 		checkTemp = (
-			<div>
+			<div key="checkboxAll">
 				<button className={classTemp} onClick={this.handleToggleAll}>
 					全選
 				</button>
