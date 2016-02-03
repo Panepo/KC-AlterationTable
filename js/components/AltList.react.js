@@ -12,6 +12,15 @@ var AltList = React.createClass({
 		tableClass: ReactPropTypes.string.isRequired,
 		day: ReactPropTypes.number.isRequired,
   },
+	
+	handleChange: function(event) {
+		var trid = this.props.tableId + event.target.id.slice(-2);
+		if ( event.target.checked ) {
+			document.getElementById(trid).style.backgroundColor = "#ccccff";
+		} else {
+			document.getElementById(trid).style.backgroundColor = "white";
+		}
+	},
 
 	render: function(){
 		var TableData = [];
@@ -39,10 +48,10 @@ var AltList = React.createClass({
 				KeyString = this.props.tableId + i.toString() + j.toString();
 				
 				TableCont = (
-					<tr key= {KeyString} >
+					<tr key={KeyString} id={KeyString} >
 					<td className="th0">
 						<label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" htmlFor={CheckString}>
-							<input type="checkbox" id={CheckString} className="mdl-checkbox__input" />
+							<input type="checkbox" id={CheckString} className="mdl-checkbox__input" onChange={this.handleChange}/>
 						</label>
 					</td>
 					<td className="th1"><img src={ImgString} height="30" width="30"/></td>

@@ -4,6 +4,7 @@
   "description": "Kancolle factory",
   "main": "app.js",
   "author": "Panepo <panepo@github.io>",
+	"repository": "https://github.com/Panepo/KCAltTable.git",
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
