@@ -29,16 +29,15 @@ var AltList = React.createClass({
 		var CheckString = "";
 		var KeyString = "";
 
-		TableData[this.props.day] = [];
-		for ( var j = 0; j < this.props.list[this.props.day].length; j++) {
+		for ( var j = 0; j < this.props.list.length; j++) {
 			for ( var k = 0; k < Constants.checkboxlist.length; k++ ) {
-				if ( this.props.list[this.props.day][j][0] == Constants.checkboxlist[k]) {
+				if ( this.props.list[j][0] == Constants.checkboxlist[k]) {
 					ImgString = "./img/sit" + (k+1) + ".png";
 				}
 			}
 			
 			for (var k = 0; k < Constants.AAlist.length; k++ ) {
-				if ( this.props.list[this.props.day][j][1] == Constants.AAlist[k]) {
+				if ( this.props.list[j][1] == Constants.AAlist[k]) {
 					ImgString = "./img/sit0.png";
 				}
 			}
@@ -54,22 +53,22 @@ var AltList = React.createClass({
 					</label>
 				</td>
 				<td className="th1"><img src={ImgString} height="30" width="30"/></td>
-				<td id={KeyString} className="th2">{this.props.list[this.props.day][j][0]}</td>
-				<td id={KeyString} className="th3">{this.props.list[this.props.day][j][1]}</td>
-				<td id={KeyString} className="th4 mdl-data-table__cell--non-numeric">{this.props.list[this.props.day][j][2]}</td>
+				<td id={KeyString} className="th2">{this.props.list[j][0]}</td>
+				<td id={KeyString} className="th3">{this.props.list[j][1]}</td>
+				<td id={KeyString} className="th4 mdl-data-table__cell--non-numeric">{this.props.list[j][2]}</td>
 				</tr>
 			);
-			TableData[this.props.day].push(TableCont);
+			TableData.push(TableCont);
 		}
 		
-		if ( this.props.display === 0 || this.props.list[this.props.day].length === 0 ) {
+		if ( this.props.display === 0 || this.props.list.length === 0 ) {
 			return null;
 		} else {
 			return(
 				<div className="AltList">
 					<table className={this.props.tableClass}>
 						<tbody>
-							{TableData[this.props.day]}
+							{TableData}
 						</tbody>
 					</table>
 				</div>

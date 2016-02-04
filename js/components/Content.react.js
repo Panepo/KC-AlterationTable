@@ -80,18 +80,18 @@ var Content = React.createClass({
 					<table className={TableClass}>
 						{TableHead}
 					</table>
-					<AltList day={i} list={data[0]} display={this.props.CBtoggle[0]} tableId={"0"} tableClass={TableClass}/>
-					<AltList day={i} list={data[1]} display={this.props.CBtoggle[1]} tableId={"1"} tableClass={TableClass}/>
-					<AltList day={i} list={data[2]} display={this.props.CBtoggle[2]} tableId={"2"} tableClass={TableClass}/>
-					<AltList day={i} list={data[3]} display={this.props.CBtoggle[3]} tableId={"3"} tableClass={TableClass}/>
-					<AltList day={i} list={data[4]} display={this.props.CBtoggle[4]} tableId={"4"} tableClass={TableClass}/>
-					<AltList day={i} list={data[5]} display={this.props.CBtoggle[5]} tableId={"5"} tableClass={TableClass}/>
-					<AltList day={i} list={data[6]} display={this.props.CBtoggle[6]} tableId={"6"} tableClass={TableClass}/>
-					<AltList day={i} list={data[7]} display={this.props.CBtoggle[7]} tableId={"7"} tableClass={TableClass}/>
-					<AltList day={i} list={data[8]} display={this.props.CBtoggle[8]} tableId={"8"} tableClass={TableClass}/>
-					<AltList day={i} list={data[9]} display={this.props.CBtoggle[9]} tableId={"9"} tableClass={TableClass}/>
-					<AltList day={i} list={data[10]} display={this.props.CBtoggle[10]} tableId={"10"} tableClass={TableClass}/>
-					<AltList day={i} list={data[11]} display={this.props.CBtoggle[11]} tableId={"11"} tableClass={TableClass}/>
+					<AltList day={i} list={data[0][i]} display={this.props.CBtoggle[0]} tableId={"0"} tableClass={TableClass}/>
+					<AltList day={i} list={data[1][i]} display={this.props.CBtoggle[1]} tableId={"1"} tableClass={TableClass}/>
+					<AltList day={i} list={data[2][i]} display={this.props.CBtoggle[2]} tableId={"2"} tableClass={TableClass}/>
+					<AltList day={i} list={data[3][i]} display={this.props.CBtoggle[3]} tableId={"3"} tableClass={TableClass}/>
+					<AltList day={i} list={data[4][i]} display={this.props.CBtoggle[4]} tableId={"4"} tableClass={TableClass}/>
+					<AltList day={i} list={data[5][i]} display={this.props.CBtoggle[5]} tableId={"5"} tableClass={TableClass}/>
+					<AltList day={i} list={data[6][i]} display={this.props.CBtoggle[6]} tableId={"6"} tableClass={TableClass}/>
+					<AltList day={i} list={data[7][i]} display={this.props.CBtoggle[7]} tableId={"7"} tableClass={TableClass}/>
+					<AltList day={i} list={data[8][i]} display={this.props.CBtoggle[8]} tableId={"8"} tableClass={TableClass}/>
+					<AltList day={i} list={data[9][i]} display={this.props.CBtoggle[9]} tableId={"9"} tableClass={TableClass}/>
+					<AltList day={i} list={data[10][i]} display={this.props.CBtoggle[10]} tableId={"10"} tableClass={TableClass}/>
+					<AltList day={i} list={data[11][i]} display={this.props.CBtoggle[11]} tableId={"11"} tableClass={TableClass}/>
 				</div>
 			);
 			PanelData.push(PanelCont);
