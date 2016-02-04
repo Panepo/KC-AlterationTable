@@ -55,7 +55,7 @@ var AltList = React.createClass({
 						</label>
 					</td>
 					<td className="th1"><img src={ImgString} height="30" width="30"/></td>
-					<td id={KeyString} className="th2" >{this.props.list[i][j][0]}</td>
+					<td id={KeyString} className="th2">{this.props.list[i][j][0]}</td>
 					<td id={KeyString} className="th3">{this.props.list[i][j][1]}</td>
 					<td id={KeyString} className="th4 mdl-data-table__cell--non-numeric">{this.props.list[i][j][2]}</td>
 					</tr>
@@ -64,7 +64,9 @@ var AltList = React.createClass({
 			}
 		}
 		
-		if ( this.props.display === 1 ) {
+		if ( this.props.display === 0 || this.props.list[this.props.day].length === 0 ) {
+			return null;
+		} else {
 			return(
 				<div className="AltList">
 					<table className={this.props.tableClass}>
@@ -74,8 +76,6 @@ var AltList = React.createClass({
 					</table>
 				</div>
 			)
-		} else {
-			return null;
 		}
 	}
 });
