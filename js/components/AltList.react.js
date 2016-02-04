@@ -16,9 +16,9 @@ var AltList = React.createClass({
 	handleChange: function(event) {
 		var trId = this.props.tableId + event.target.id.slice(-2);
 		if ( event.target.checked ) {
-			document.getElementById(trId).style.backgroundColor = "#ccccff";
+			document.getElementById(trId).style.color = "blue";
 		} else {
-			document.getElementById(trId).style.backgroundColor = "white";
+			document.getElementById(trId).style.color = "black";
 		}
 	},
 
@@ -55,9 +55,9 @@ var AltList = React.createClass({
 						</label>
 					</td>
 					<td className="th1"><img src={ImgString} height="30" width="30"/></td>
-					<td className="th2">{this.props.list[i][j][0]}</td>
-					<td className="th3">{this.props.list[i][j][1]}</td>
-					<td className="th4 mdl-data-table__cell--non-numeric">{this.props.list[i][j][2]}</td>
+					<td id={KeyString} className="th2" >{this.props.list[i][j][0]}</td>
+					<td id={KeyString} className="th3">{this.props.list[i][j][1]}</td>
+					<td id={KeyString} className="th4 mdl-data-table__cell--non-numeric">{this.props.list[i][j][2]}</td>
 					</tr>
 				);
 				TableData[i].push(TableCont);
