@@ -6,18 +6,20 @@ var AppStore = require("../stores/AppStore");
 
 var KCFactoryApp = React.createClass({
 	displayName: "KCFactoryApp",
+	
 	getInitialState: function(){
 		return{
 			value: AppStore.getValue()
 		};
 	},
+	
 	componentDidMount: function() {
-    AppStore.addChangeListener(this._onChange);
+		AppStore.addChangeListener(this._onChange);
 	},
 
-  componentWillUnmount: function() {
-    AppStore.removeChangeListener(this._onChange);
-  },
+	componentWillUnmount: function() {
+		AppStore.removeChangeListener(this._onChange);
+	},
 
 	render: function(){
 		return(
