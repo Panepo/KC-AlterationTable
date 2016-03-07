@@ -92,6 +92,7 @@ var Content = React.createClass({
 					<AltList day={i} list={data[9][i]} display={this.props.CBtoggle[9]} tableId={"9"} tableClass={TableClass}/>
 					<AltList day={i} list={data[10][i]} display={this.props.CBtoggle[10]} tableId={"10"} tableClass={TableClass}/>
 					<AltList day={i} list={data[11][i]} display={this.props.CBtoggle[11]} tableId={"11"} tableClass={TableClass}/>
+					<AltList day={i} list={data[12][i]} display={this.props.CBtoggle[12]} tableId={"12"} tableClass={TableClass}/>
 				</div>
 			);
 			PanelData.push(PanelCont);
@@ -103,7 +104,7 @@ var Content = React.createClass({
 		return(
 			<div className="ContentOut">
 				<h4>艦これ装備改修表曜日別逆引き</h4>
-				更新: 2015/11/23
+				更新: 2016/03/07
 				<div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 				  <div className="mdl-tabs__tab-bar">
 				    {TabData}
