@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack",
-    "parser": "node ./raw/data.js"
+    "parser": "node ./src/raw/data.js"
   },
   "dependencies": {
     "flux": "^2.1.1",

@@ -1,7 +1,7 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
 var AltList = require("./AltList.react");
-var data = require("../../raw/data.json");
+var data = require("../raw/data.json");
 
 var Content = React.createClass({
 	displayName: "Content",
