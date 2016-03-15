@@ -28,7 +28,22 @@ module.exports = {
         test: /\.json/,
         loaders: [ 'json' ],
         include: path.join(__dirname, 'src')
-      }
+      },
+			{
+				test: /\.(css|scss)$/,
+				loaders: [ 'style', 'css', 'sass' ],
+				include: path.join(__dirname, 'src')
+			},
+			{
+				test: /\.(png|jpg)$/,
+				loaders: [ 'url-loader?limit=8192' ],
+				include: path.join(__dirname, 'src')
+			},
+			{
+				test: /\.ls$/,
+				loaders: [ "react-hot", "livescript" ],
+				include: path.join(__dirname, 'src')
+			}
     ]
   }
 }
