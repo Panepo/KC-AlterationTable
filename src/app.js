@@ -1,6 +1,6 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var KCFactoryApp = require("./components/KCFactoryApp.react");
+import React from "react";
+import ReactDom from "react-dom";
+import KCFactoryApp from "./components/KCFactoryApp.react";
 
 ReactDOM.render(
   <KCFactoryApp />,

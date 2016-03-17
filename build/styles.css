@@ -101,11 +101,15 @@
 	width: 400px;
 }
 
-.mdl-button {
+.floating-menu .mdl-button {
 	width: 130px;
 	margin-top: 2px;
 	border-style: solid;
 	border-width: 2px;
 	border-color: #ccccff;
 	border-radius: 2px;
+}
+
+.Content .mdl-button {
+	width: 110px;
 }

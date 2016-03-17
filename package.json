@@ -1,7 +1,7 @@
 {
-  "name": "kancolle-factory",
-  "version": "1.0.0",
-  "description": "Kancolle factory",
+  "name": "kc-alt-table",
+  "version": "2.0.0",
+  "description": "Kancolle alteration table",
   "main": "app.js",
   "author": "Panepo <panepo@github.io>",
   "repository": "https://github.com/Panepo/KCAltTable.git",
@@ -9,7 +9,9 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack",
-    "parser": "node ./src/raw/parser.js"
+    "parser": "node ./src/raw/parser.js",
+		"buildls": "webpack --config webpack.config.ls",
+		"parserls": "lsc  ./src/raw/parser.ls --nodejs --harmoy"
   },
   "dependencies": {
     "flux": "^2.1.1",
