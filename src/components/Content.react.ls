@@ -1,11 +1,14 @@
 require! {
 	"react": React
 	"react": { PropTypes: ReactPropTypes }
+	"./AltList.react.ls": AltList
 	"../constants/constants.ls": Constants
 	"../actions/AppAction.ls": AppAction
 }
 
 {div, button, table, thead, tr, th} = React.DOM
+
+AltList = React.createFactory AltList
 
 listTab = ["日 (Sun)" "月 (Mon)" "火 (Tue)" "水 (Wed)" "木 (Thu)" "金 (Fri)" "土 (Sat)"]
 listThead = ["" "" "分類" "装備名" "二番艦"]
@@ -17,12 +20,13 @@ Content = React.createClass do
 	propTypes:
 		toggle: ReactPropTypes.array.isRequired
 		day: ReactPropTypes.number.isRequired
-	
+		output: ReactPropTypes.array.isRequired
+
 	handleDayChange: (event) !->
 		AppAction.dayChange parseInt event.target.id
 
 	render: ->
-		div className: "Content",
+		div null,
 			for list, i in listTab
 				if @props.day is i
 					button className: Constants.buttonClassActive, key:i, id:i, onClick: @handleDayChange, list
@@ -33,6 +37,12 @@ Content = React.createClass do
 					tr null,
 						for list, i in listThead
 							th className: listTheadClass[i], key:i, list
-
+			for toggle, i in @props.toggle
+				if toggle is 1
+					AltList {
+						key:i,
+						tableId:i.toString(),
+						output: @props.output[i], 
+					}, null
 
 module.exports = Content

@@ -1,17 +1,17 @@
 require! {
 	"../dispatcher/AppDispatcher.ls": AppDispatcher
-	"../constants/ConstActions.ls": Constants
+	"../constants/ConstActions.ls": ConstActions
 }
 
 AppAction = 
 	toggleChange: (toggle) !->
 		AppDispatcher.dispatch(
-			actionType: Constants.toggleChange
+			actionType: ConstActions.toggleChange
 			toggle: toggle
 			)
 	dayChange: (day) !->
 		AppDispatcher.dispatch(
-			actionType: Constants.dayChange
+			actionType: ConstActions.dayChange
 			day: day
 			)
 

@@ -27,9 +27,17 @@ module.exports = {
 			}
 			{
 				test: /\.ls$/
-				loaders: [ "react-hot", "livescript-loader" ]
+				loaders: [ "react-hot", "livescript" ]
+				include: path.join(__dirname, 'src')
+			}
+			{
+				test: /\.json/
+				loaders: [ "json" ]
 				include: path.join(__dirname, 'src')
 			}
 		]
+	}
+	node: {
+		fs: "empty"
 	}
 }
