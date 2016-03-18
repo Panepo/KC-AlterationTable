@@ -22,6 +22,8 @@ Constants = {
 	buttonClassActive: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary"
 	buttonClassInactive: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"
 	TableClass: "mdl-data-table mdl-shadow--2dp"
+	TabClass: "mdl-tabs__tab"
+	TabClassActive: "mdl-tabs__tab is-active"
 }
 
 module.exports = Constants

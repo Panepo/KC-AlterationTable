@@ -6,7 +6,7 @@ require! {
 	"../actions/AppAction.ls": AppAction
 }
 
-{div, button, table, thead, tr, th} = React.DOM
+{div, button, table, thead, tr, th, a} = React.DOM
 
 AltList = React.createFactory AltList
 
@@ -27,11 +27,13 @@ Content = React.createClass do
 
 	render: ->
 		div null,
-			for list, i in listTab
-				if @props.day is i
-					button className: Constants.buttonClassActive, key:i, id:i, onClick: @handleDayChange, list
-				else
-					button className: Constants.buttonClassInactive, key:i, id:i, onClick: @handleDayChange, list
+			div className: "mdl-tabs mdl-js-tabs mdl-js-ripple-effect",
+				div className: "mdl-tabs__tab-bar",
+					for list, i in listTab
+						if @props.day is i
+							button className: Constants.buttonClassActive, key:i, id:i, onClick: @handleDayChange, list
+						else
+							button className: Constants.buttonClassInactive, key:i, id:i, onClick: @handleDayChange, list
 			table className: Constants.TableClass,
 				thead null,
 					tr null,
@@ -41,6 +43,14 @@ Content = React.createClass do
 				if toggle is 1
 					AltList {
 						key:i,
+						display: true,
+						tableId:i.toString(),
+						output: @props.output[i], 
+					}, null
+				else
+					AltList {
+						key:i,
+						display: false,
 						tableId:i.toString(),
 						output: @props.output[i], 
 					}, null

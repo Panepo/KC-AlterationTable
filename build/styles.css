@@ -110,6 +110,6 @@
 	border-radius: 2px;
 }
 
-.Content .mdl-button {
-	width: 110px;
+.mdl-tabs__tab-bar .mdl-button {
+	width: 105px;
 }
