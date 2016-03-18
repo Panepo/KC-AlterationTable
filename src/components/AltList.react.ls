@@ -14,10 +14,6 @@ AltList = React.createClass do
 		display: ReactPropTypes.bool.isRequired
 		tableId: ReactPropTypes.string.isRequired
 	
-	getInitialState: -> {
-		output: @props.output
-	}
-	
 	componentDidUpdate: !->
 		componentHandler.upgradeDom()
 	
