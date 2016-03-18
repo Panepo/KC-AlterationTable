@@ -6,7 +6,7 @@ require! {
 	"../actions/AppAction.ls": AppAction
 }
 
-{div, button, table, thead, tr, th, a} = React.DOM
+{div, button, table, thead, tr, th, a, h4} = React.DOM
 
 AltList = React.createFactory AltList
 
@@ -27,6 +27,8 @@ Content = React.createClass do
 
 	render: ->
 		div null,
+			h4 null, "艦これ装備改修表曜日別逆引き"
+			"更新: 2016/03/07"
 			div className: "mdl-tabs mdl-js-tabs mdl-js-ripple-effect",
 				div className: "mdl-tabs__tab-bar",
 					for list, i in listTab
