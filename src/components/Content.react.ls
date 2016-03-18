@@ -38,18 +38,18 @@ Content = React.createClass do
 				thead null,
 					tr null,
 						for list, i in listThead
-							th className: listTheadClass[i], key:i, list
+							th className: listTheadClass[i], key:"thead" + i.toString(),, list
 			for toggle, i in @props.toggle
 				if toggle is 1
 					AltList {
-						key:i,
+						key:"alt" + i.toString(),
 						display: true,
 						tableId:i.toString(),
 						output: @props.output[i], 
 					}, null
 				else
 					AltList {
-						key:i,
+						key:"alt" + i.toString(),
 						display: false,
 						tableId:i.toString(),
 						output: @props.output[i], 

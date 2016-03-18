@@ -14,6 +14,10 @@ AltList = React.createClass do
 		display: ReactPropTypes.bool.isRequired
 		tableId: ReactPropTypes.string.isRequired
 	
+	getInitialState: -> {
+		output: @props.output
+	}
+	
 	componentDidUpdate: !->
 		componentHandler.upgradeDom()
 	
@@ -23,7 +27,7 @@ AltList = React.createClass do
 			document.getElementById(trId).style.color = "blue"
 		else
 			document.getElementById(trId).style.color = "black"
-	
+		
 	render: ->
 		div null,
 			if @props.display is true and @props.output.length !== 0
@@ -35,9 +39,11 @@ AltList = React.createClass do
 									label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.tableId + i.toString(),
 										input type: "checkbox" id:@props.tableId + i.toString(), className: "mdl-checkbox__input", onChange: @handleChange, null
 								td className: "th1",
-									img src: data.img, height: "30", width: "30", null
+									img src: data.img, height: "25", width: "25", null
 								td className: "th2", data.type
 								td className: "th3", data.name
-								td className: "th4 mdl-data-table__cell--non-numeric", data.owner
+								td className: "th4 mdl-data-table__cell--non-numeric",
+									if data.owner.length !== 0
+										img src: "./img/" + data.owner + ".jpg", height: "25", width: "100", null
 
 module.exports = AltList
