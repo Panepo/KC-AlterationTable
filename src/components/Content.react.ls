@@ -11,8 +11,7 @@ require! {
 AltList = React.createFactory AltList
 
 listTab = ["日 (Sun)" "月 (Mon)" "火 (Tue)" "水 (Wed)" "木 (Thu)" "金 (Fri)" "土 (Sat)"]
-listThead = ["" "" "分類" "装備名" "二番艦"]
-listTheadClass = ["th0" "th1" "th2" "th3" "th4 mdl-data-table__cell--non-numeric"]
+listThead = ["" "" "分類" "装備名" "二番艦" ""]
 
 Content = React.createClass do
 	displayName: "Content"
@@ -40,7 +39,7 @@ Content = React.createClass do
 				thead null,
 					tr null,
 						for list, i in listThead
-							th className: listTheadClass[i], key:"thead" + i.toString(),, list
+							th className: Constants.TbodyClass[i], key:"thead" + i.toString(),, list
 			for toggle, i in @props.toggle
 				if toggle is 1
 					AltList {

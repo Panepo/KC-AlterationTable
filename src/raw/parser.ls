@@ -1,6 +1,6 @@
 require! {
 	"fs": fs
-	"./data": data
+	"./data.ls": data
 	"../constants/constants.ls": Constants
 }
 slot = ["type" "name" "owner" "sun" "mon" "tue" "wed" "thu" "fri" "sat"]
@@ -20,6 +20,10 @@ for data, i in output
 	for listAA in Constants.listAA
 		if data.name is listAA
 			imgSrc = "./img/sit0.png"
+	
+	for listBoat in Constants.listBoat
+		if data.name is listBoat
+			imgSrc = "./img/sit00.png"
 	
 	data.img = imgSrc
 

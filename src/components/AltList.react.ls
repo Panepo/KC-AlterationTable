@@ -31,14 +31,15 @@ AltList = React.createClass do
 					tbody null,
 						for data, i in @props.output
 							tr key:i, id:@props.tableId + i.toString() + "tr",
-								td className: "th0",
+								td className: Constants.TbodyClass[0],
 									label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.tableId + i.toString(),
 										input type: "checkbox" id:@props.tableId + i.toString(), className: "mdl-checkbox__input", onChange: @handleChange, null
-								td className: "th1",
+								td className: Constants.TbodyClass[1],
 									img src: data.img, height: "25", width: "25", null
-								td className: "th2", data.type
-								td className: "th3", data.name
-								td className: "th4 mdl-data-table__cell--non-numeric",
+								td className: Constants.TbodyClass[2], data.type
+								td className: Constants.TbodyClass[3], data.name
+								td className: Constants.TbodyClass[4], data.owner
+								td className: Constants.TbodyClass[5],
 									if data.owner.length !== 0
 										img src: "./img/" + data.owner + ".jpg", height: "25", width: "100", null
 
