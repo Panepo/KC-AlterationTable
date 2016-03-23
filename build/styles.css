@@ -87,7 +87,7 @@
 }
 
 .mdl-data-table {
-	display: flex;
+	width: 100%;
 }
 .th0{
 	width: 60px;
