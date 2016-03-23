@@ -82,6 +82,10 @@
 	position: fixed;
 }
 
+.mdl-tabs {
+	margin-bottom: 10px;
+}
+
 .mdl-data-table {
 	display: flex;
 }

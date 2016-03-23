@@ -20,9 +20,9 @@ AltList = React.createClass do
 	handleChange: (event) !->
 		trId = event.target.id + "tr"
 		if event.target.checked
-			document.getElementById(trId).style.color = "blue"
+			document.getElementById(trId).style.backgroundColor = '#f5f5f5'
 		else
-			document.getElementById(trId).style.color = "black"
+			document.getElementById(trId).style.backgroundColor = "transparent"
 		
 	render: ->
 		div null,

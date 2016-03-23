@@ -39,7 +39,7 @@ Content = React.createClass do
 				thead null,
 					tr null,
 						for list, i in listThead
-							th className: Constants.TbodyClass[i], key:"thead" + i.toString(),, list
+							th className: Constants.TbodyClass[i], key:"thead" + i.toString(), list
 			for toggle, i in @props.toggle
 				if toggle is 1
 					AltList {
