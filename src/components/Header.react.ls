@@ -5,7 +5,7 @@ require! {
 	"../actions/AppAction.ls": AppAction
 }
 
-{div, span, nav, button} = React.DOM
+{div, span, nav, button, a} = React.DOM
 
 Header = React.createClass do
 	displayName: "Header"
@@ -47,7 +47,11 @@ Header = React.createClass do
 				div className: "mdl-layout__header-row",
 					span className: "mdl-layout-title", null
 					div className: "mdl-layout-spacer", null
-				nav className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
+					nav className: "mdl-navigation",
+						a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/kancolle/", "Wiki"
+						a className: Constants.buttonClassActive, href: 'http://wikiwiki.jp/kancolle/?%B2%FE%BD%A4%B9%A9%BE%B3#s_kaisyu', "簡易改修表 "
+				div className: "demo-ribbon", null
+			nav className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
 					if @state.toggleAll is true
 						button className: Constants.buttonClassActive, onClick: @handleToggleAll, "全選"
 					else
@@ -58,6 +62,5 @@ Header = React.createClass do
 								button id: "checkbox" + i.toString(), className: Constants.buttonClassActive, onClick: @handleToggle, type
 							else
 								button id: "checkbox" + i.toString(), className: Constants.buttonClassInactive, onClick: @handleToggle, type
-				div className: "demo-ribbon", null
 
 module.exports = Header
