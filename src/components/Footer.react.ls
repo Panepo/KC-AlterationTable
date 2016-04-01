@@ -2,13 +2,13 @@ require! {
 	"react": React
 }
 
-{div, a} = React.DOM
+{div, a, footer} = React.DOM
 
 Footer = React.createClass do
 	displayName: "Footer"
 
 	render: ->
-		div className: "demo-footer mdl-mini-footer",
+		footer className: "demo-footer mdl-mini-footer",
 			div className: "mdl-mini-footer--left-section",
 				div null,
 					"『"

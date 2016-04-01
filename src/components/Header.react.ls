@@ -5,7 +5,7 @@ require! {
 	"../actions/AppAction.ls": AppAction
 }
 
-{div, span, nav, button, a} = React.DOM
+{div, span, nav, button, a, header} = React.DOM
 
 Header = React.createClass do
 	displayName: "Header"
@@ -42,15 +42,13 @@ Header = React.createClass do
 		AppAction.toggleChange toggle
 
 	render: ->
-		div null,
-			div className: "demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800",
-				div className: "mdl-layout__header-row",
-					span className: "mdl-layout-title", null
-					div className: "mdl-layout-spacer", null
-					nav className: "mdl-navigation",
-						a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/kancolle/", "Wiki"
-						a className: Constants.buttonClassActive, href: 'http://wikiwiki.jp/kancolle/?%B2%FE%BD%A4%B9%A9%BE%B3#s_kaisyu', "簡易改修表 "
-				div className: "demo-ribbon", null
+		header className: "demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800",
+			div className: "mdl-layout__header-row",
+				span className: "mdl-layout-title", null
+				div className: "mdl-layout-spacer", null
+				nav className: "mdl-navigation",
+					a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/kancolle/", "Wiki"
+					a className: Constants.buttonClassActive, href: 'http://wikiwiki.jp/kancolle/?%B2%FE%BD%A4%B9%A9%BE%B3#s_kaisyu', "簡易改修表 "
 			nav className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
 					if @state.toggleAll is true
 						button className: Constants.buttonClassActive, onClick: @handleToggleAll, "全選"

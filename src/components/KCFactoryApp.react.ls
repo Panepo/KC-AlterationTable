@@ -45,7 +45,8 @@ KCFactoryApp = React.createClass do
 		div null,
 			div className: "demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100",
 				Header toggle: @state.data.toggle, null
-				div className: "demo-main mdl-layout__content",
+				div className: "demo-ribbon", null
+				main className: "demo-main mdl-layout__content",
 					div className: "demo-container mdl-grid",
 						div className: "mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone", null
 						div className: "demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",

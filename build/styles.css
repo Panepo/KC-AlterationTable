@@ -77,7 +77,7 @@
 	padding: 20px;
 	width: 170px;
 	margin-left: 50px;
-	margin-top: -52vh;
+	margin-top: 7vh;
 	z-index: 100;
 	position: fixed;
 }
@@ -90,22 +90,22 @@
 	width: 100%;
 }
 .th0{
-	width: 60px;
+	width: 8%;
 }
 .th1{
-	width: 60px;
+	width: 8%;
 }
 .th2{
-	width: 110px;
+	width: 15%;
 }
 .th3{
-	width: 230px;
+	width: 27%;
 }
 .th4{
-	width: 110px;
+	width: 15%;
 }
 .th5{
-	width: 200px;
+	width: 27%;
 }
 
 .floating-menu .mdl-button {
@@ -119,4 +119,17 @@
 
 .mdl-tabs__tab-bar .mdl-button {
 	width: 105px;
+}
+
+@media only screen and (max-width: 1000px){
+	.floating-menu, .table-checkbox, .table-image, .th0, .th2, .th1, .th5 {
+		display: none;
+	}
+	
+	.th3, .th4 {
+		margin: auto;
+		max-width: 80px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
