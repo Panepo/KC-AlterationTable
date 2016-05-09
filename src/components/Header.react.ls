@@ -14,7 +14,7 @@ Header = React.createClass do
 		toggle: ReactPropTypes.array.isRequired
 		
 	getInitialState: -> {
-		toggleAll: true
+		toggleAll: false
 	}
 	
 	handleToggle: (event) !->
