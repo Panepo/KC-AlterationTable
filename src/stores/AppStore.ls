@@ -4,7 +4,7 @@ require! {
 	"object-assign": assign
 	"../dispatcher/AppDispatcher.ls": AppDispatcher
 	"../constants/ConstActions.ls": ConstActions
-	"../raw/dataLoki.json": RawData
+	"../../raw/dataLoki.json": RawData
 	"../constants/constants.ls": Constants
 }
 
@@ -14,7 +14,7 @@ CHANGE_EVENT = 'change'
 # GLOBAL VARIABLES
 # ===============================================================================
 _data = {
-	toggle: [0,0,0,0,0,1,0,0,0,0,0,0,0,0]
+	toggle: [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
 	day: 0
 	output: []
 }

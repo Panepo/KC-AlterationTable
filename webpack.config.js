@@ -27,7 +27,7 @@ module.exports = {
 			{
         test: /\.json/,
         loaders: [ 'json' ],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'raw')
       },
 			{
 				test: /\.(css|scss)$/,
