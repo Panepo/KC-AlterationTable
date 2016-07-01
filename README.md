@@ -1,6 +1,6 @@
-# [KCAltTable](http://panepo.github.io/KCAlteration/)
+# [Melon](https://github.com/Panepo/Melon.git)
 
-艦これ裝備改修表曜日別逆引き
+艦これ改修工廠早見表 メロン
 
 『[艦これ](http://www.dmm.com/netgame_s/kancolle/)』(C) DMMゲームズ
 
@@ -9,16 +9,21 @@
 ## Developement
 
 ```
-$ git clone https://github.com/Panepo/KCAltTable.git
-$ cd KCAltTable
+$ git clone https://github.com/Panepo/Melon.git
+$ cd Melon
 $ npm install
 ```
 
-Use browserify to build scripts   
+Run simulated server
 ```
 $ npm start
 ```
+Or use webpack to build scripts
+```
+$ npm run build
+```
 
 ### Usage
-Just take the index.html to your browser to see the result.
+Just visit [http://localhost:3000/](http://localhost:3000/)
+or take the index.html to your browser to see the result.
 
