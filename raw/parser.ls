@@ -1,7 +1,7 @@
 require! {
 	"fs": fs
 	"./data.ls": data
-	"../constants/constants.ls": Constants
+	"../src/constants/constants.ls": Constants
 }
 slot = ["type" "name" "owner" "sun" "mon" "tue" "wed" "thu" "fri" "sat"]
 
@@ -29,4 +29,4 @@ for data, i in output
 
 output = JSON.stringify output
 console.log "dataLoki.json arrange complete!"
-fs.writeFileSync "./src/raw/dataLoki.json", output
+fs.writeFileSync "./raw/dataLoki.json", output
