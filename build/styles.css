@@ -80,6 +80,8 @@
 	margin-top: 7vh;
 	z-index: 100;
 	position: fixed;
+	max-height: 520px;
+	overflow: auto;
 }
 
 .mdl-tabs {
