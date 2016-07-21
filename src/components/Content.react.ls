@@ -27,7 +27,7 @@ Content = React.createClass do
 	render: ->
 		div null,
 			h4 null, "艦これ改修工廠早見表 メロン"
-			"更新: 2016/07/01"
+			"更新: 2016/07/21"
 			div className: "mdl-tabs mdl-js-tabs mdl-js-ripple-effect",
 				div className: "mdl-tabs__tab-bar",
 					for list, i in listTab

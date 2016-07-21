@@ -15,6 +15,7 @@ Header = React.createClass do
 		
 	getInitialState: -> {
 		toggleAll: false
+		toggleStart: 0
 	}
 	
 	handleToggle: (event) !->
@@ -41,6 +42,21 @@ Header = React.createClass do
 				
 		AppAction.toggleChange toggle
 
+	handleUp: (event) !->
+		if @state.toggleStart <= 6
+			@setState { toggleStart: 0 }
+		else
+			temp = @state.toggleStart - 6
+			@setState { toggleStart: temp }
+	
+	handleDown: (event) !->
+		if @state.toggleStart + 9 > Constants.listType.length
+			temp = Constants.listType.length - 9
+			@setState { toggleStart: temp }
+		else
+			temp = @state.toggleStart + 6
+			@setState { toggleStart: temp }
+	
 	render: ->
 		header className: "demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800",
 			div className: "mdl-layout__header-row",
@@ -50,15 +66,23 @@ Header = React.createClass do
 					a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/kancolle/", "Wiki"
 					a className: Constants.buttonClassActive, href: 'http://wikiwiki.jp/kancolle/?%B2%FE%BD%A4%B9%A9%BE%B3#s_kaisyu', "簡易改修表 "
 			nav className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
+				div null,
 					if @state.toggleAll is true
 						button className: Constants.buttonClassActive, onClick: @handleToggleAll, "全選"
 					else
 						button className: Constants.buttonClassInactive, onClick: @handleToggleAll, "全選"
-					for type, i in Constants.listType
-						div key: "checkbox" + i.toString(),
+				if @state.toggleStart != 0
+					div null,
+						button id: "checkbox up", className: Constants.buttonClassActive, onClick: @handleUp, "︽"
+				for type, i in Constants.listType
+					div key: "checkbox" + i.toString(),
+						if i >= @state.toggleStart and i <= @state.toggleStart + 10
 							if @props.toggle[i] is 1
 								button id: "checkbox" + i.toString(), className: Constants.buttonClassActive, onClick: @handleToggle, type
 							else
 								button id: "checkbox" + i.toString(), className: Constants.buttonClassInactive, onClick: @handleToggle, type
+				if @state.toggleStart + 10 < Constants.listType.length
+					div null,
+						button id: "checkbox down", className: Constants.buttonClassActive, onClick: @handleDown, "︾"
 
 module.exports = Header
