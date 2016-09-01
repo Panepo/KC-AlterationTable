@@ -17,7 +17,11 @@
 .demo-ribbon {
   width: 100%;
   height: 60vh;
-  background-color: #3333cc;
+  background-color: #00cc00;
+  background: -webkit-linear-gradient(left top, #0099ff, #66ccff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #0099ff, #66ccff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #0099ff, #66ccff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #0099ff, #66ccff); /* Standard syntax */
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
