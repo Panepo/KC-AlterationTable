@@ -43,18 +43,18 @@ Header = React.createClass do
 		AppAction.toggleChange toggle
 
 	handleUp: (event) !->
-		if @state.toggleStart <= 6
+		if @state.toggleStart <= (Constants.buttonLength - 4)
 			@setState { toggleStart: 0 }
 		else
-			temp = @state.toggleStart - 6
+			temp = @state.toggleStart - (Constants.buttonLength - 4)
 			@setState { toggleStart: temp }
 	
 	handleDown: (event) !->
-		if @state.toggleStart + 9 > Constants.listType.length
-			temp = Constants.listType.length - 9
+		if @state.toggleStart + (Constants.buttonLength - 1) > Constants.listType.length
+			temp = Constants.listType.length - (Constants.buttonLength - 1)
 			@setState { toggleStart: temp }
 		else
-			temp = @state.toggleStart + 6
+			temp = @state.toggleStart + (Constants.buttonLength - 4)
 			@setState { toggleStart: temp }
 	
 	render: ->
@@ -76,12 +76,12 @@ Header = React.createClass do
 						button id: "checkbox up", className: Constants.buttonClassActive, onClick: @handleUp, "︽"
 				for type, i in Constants.listType
 					div key: "checkbox" + i.toString(),
-						if i >= @state.toggleStart and i <= @state.toggleStart + 10
+						if i >= @state.toggleStart and i <= @state.toggleStart + Constants.buttonLength
 							if @props.toggle[i] is 1
 								button id: "checkbox" + i.toString(), className: Constants.buttonClassActive, onClick: @handleToggle, type
 							else
 								button id: "checkbox" + i.toString(), className: Constants.buttonClassInactive, onClick: @handleToggle, type
-				if @state.toggleStart + 10 < Constants.listType.length
+				if @state.toggleStart + Constants.buttonLength < Constants.listType.length
 					div null,
 						button id: "checkbox down", className: Constants.buttonClassActive, onClick: @handleDown, "︾"
 

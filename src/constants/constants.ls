@@ -25,6 +25,11 @@ Constants = {
 	buttonClassInactive: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"
 	TableClass: "mdl-data-table mdl-shadow--2dp"
 	TbodyClass: ["th0" "th1" "th2" "th3" "th4" "th5 mdl-data-table__cell--non-numeric"]
+	
+# ===============================================================================
+# system config
+# ===============================================================================
+	buttonLength: 11
 }
 
 module.exports = Constants
