@@ -15,15 +15,15 @@ for dataValue, i in data
 for data, i in output
 	for type, j in Constants.listType
 		if data.type is type
-			imgSrc = "./img/sit" + Constants.listTypeNumber[j] + ".png"
+			imgSrc = "http://panepo.github.io/KCData/image/icon/sit" + Constants.listTypeNumber[j] + ".png"
 	
 	for listAA in Constants.listAA
 		if data.name is listAA
-			imgSrc = "./img/sit0.png"
+			imgSrc = "http://panepo.github.io/KCData/image/icon/sit0.png"
 	
 	for listBoat in Constants.listBoat
 		if data.name is listBoat
-			imgSrc = "./img/sit00.png"
+			imgSrc = "http://panepo.github.io/KCData/image/icon/sit36.png"
 	
 	data.img = imgSrc
 
