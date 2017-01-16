@@ -19,7 +19,7 @@ for data, i in output
 	
 	for listAA in Constants.listAA
 		if data.name is listAA
-			imgSrc = "http://panepo.github.io/KCData/image/icon/sit0.png"
+			imgSrc = "http://panepo.github.io/KCData/image/icon/sit16.png"
 	
 	for listBoat in Constants.listBoat
 		if data.name is listBoat
